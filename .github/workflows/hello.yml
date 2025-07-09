@@ -1,0 +1,15 @@
+name: CI/CD
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Script
+        run: echo "Testing Action Display"
+      - name: Run Multi-line Script
+        run: |
+          echo Adding other actions,
+          echo Testing different steps.
