@@ -5,9 +5,10 @@ on: [push]
 jobs:
     main:
       runs-on: ubuntu-latest
-      steps:
+      steps: 
         - name: Checkout Repo
           uses: actions/checkout@v4
         - name: Running Script
           run: python3 ./hello.py 
-
+        - name: Build
+          run: ./artifact.py
