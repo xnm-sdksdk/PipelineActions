@@ -8,9 +8,11 @@ jobs:
       steps: 
         - name: Checkout Repo
           uses: actions/checkout@v4
-        - name: Running Script
-          run: python3 ./hello.py 
+          with:
+           name: pyfile
+           path: ./hello.py
 
     publish:
         needs: main
         uses: ./.github/workflows/artifactpy.yml
+        secrets: inherit
