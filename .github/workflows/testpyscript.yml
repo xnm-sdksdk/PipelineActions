@@ -11,4 +11,4 @@ jobs:
         - name: Running Script
           run: python3 ./hello.py 
         - name: Build
-          run: ./artifactpy.yml
+          run: ./.github/workflows/artifactpy.yml
