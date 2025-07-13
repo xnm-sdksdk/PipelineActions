@@ -1,15 +1,23 @@
 name: Generate Artifact Python
 
-on: [workflow_call]
+on:
+    workflow_run:
+        workflows: [ Build Python ]
+        types: [ completed ]
+
+permissions:
+    actions: read
+    contents: read
 
 jobs:
   upload:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           name: pyfile
+          run-id: ${{ github.event.workflow_run.id }}
       - uses: actions/upload-artifact@v4
         with:
           name: pythonartifact
