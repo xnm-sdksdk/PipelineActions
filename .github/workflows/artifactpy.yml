@@ -1,8 +1,5 @@
 name: Generate Artifact Python
 
-env:
-    ARTIFACT_NAME: pythonartifact
-
 on: [workflow_call]
 
 jobs:
@@ -15,5 +12,5 @@ jobs:
           name: pyfile
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.ARTIFACT_NAME }}
+          name: pythonartifact
           path: ./hello.py
