@@ -9,5 +9,5 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
         - name: Running Script
-          run: python3 ../hello.py 
+          run: python3 ./hello.py 
 
