@@ -1,0 +1,19 @@
+name: Python workflow
+on:
+    workflow_dispatch:
+    push:
+        branches: [main]
+    pull_request_
+        branches: [main]
+
+
+jobs:
+    build:
+        strategy:
+            matrix: []
+        runs- on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+
+
+
