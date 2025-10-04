@@ -1,10 +1,11 @@
 FROM ubuntu:latest
 
-RUN apk add --update \
+RUN apt-get update && apt-get install -y \
     bash \
     coreutils \
     curl \
-    vim
+    vim \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY simple.py /usr/local/bin
 RUN chmod +x /usr/local/bin/simple.py
