@@ -32,6 +32,8 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
+            - name: Normalize image name
+              run: echo "IMAGE_NAME=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
             # Install the cosign tool except on PR
             # https://github.com/sigstore/cosign-installer
